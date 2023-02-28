@@ -1,1 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: serif;
+}
 
+.navbar-brand {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 15%;
+    height: 75px;
+    line-height: 75px;
+
+}
+
+.navbar-brand .menu-list {
+    display: flex;
+}
+
+.navbar-brand .menu-list .menu-items {
+    cursor: pointer;
+    height: 100%;
+    padding: 0 30px;
+    transition: .4s;
+}
+
+.navbar-brand .menu-list .menu-items:hover {
+    background: #ef2a82;
+}
+
+.navbar-brand .menu-list .menu-link {
+    color: #8794BA;
+    font-size: 18px;
+
+}
+
+@media (max-width: 935px) {
+    .navbar-brand {
+        padding: 0 2rem;
+    }
+
+    .navbar-brand .menu-list .menu-items {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar-brand .menu-list {
+        display: grid;
+        position: absolute;
+        background: #ef2a82;
+        width: 60%;
+        top: 75px;
+        left: 0;
+        transform: translateY(-130%);
+        z-index: -1;
+        transition: .6s;
+    }
+
+    .navbar-brand .menu-list .menu-items {
+        padding-left: 35px;
+    }
+
+    .navbar-brand .navbar-toggler {
+        display: grid !important;
+
+    }
+}
+
+.navbar-brand .navbar-toggler {
+    display: none;
+    height: min-content;
+    margin: 18px -10px 0 0;
+    cursor: pointer;
+
+}
+
+.navbar-brand .navbar-toggler .bar {
+    width: 20px;
+    height: 4px;
+    margin-bottom: 10px;
+    background: #8794BA;
+    border-radius: 10%;
+    transition: .4s;
+}
+
+input {
+    display: none;
+}
+
+input:checked~.navbar-brand .menu-list {
+    transform: translateY(0);
+}
+
+input:checked~.navbar-brand .navbar-toggler {
+    margin-top: 35px;
+}
+
+input:checked~.navbar-brand .navbar-toggler .bar:nth-child(1) {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+input:checked~.navbar-brand .navbar-toggler .bar:nth-child(2) {
+    display: none;
+}
+
+input:checked~.navbar-brand .navbar-toggler .bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
